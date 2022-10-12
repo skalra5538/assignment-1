@@ -1,129 +1,265 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+#Name= Sachin Kalra 
+#Author= Madiha Kazmi
+#Date created= 10 october 2022
+#Date last modified= 10 october 2022
+# Purpose:
+# this program will be used by the arnold amazing's branch for taking the orders and for  
+# the calculution of discounts thay they have available for their customers 
+#first we will ask the user to input his or her details
+print ("welcome to the Arnold's Amazing Eats II .we are here to serve you.")
+print("The purpose of this branch is to fulfill the needs of customers what they expected from us.")
+print("")
+print(input("enter your first name :"))
+print(input("enter your last name :"))
+print(input(" please enter your full delivery address " "(street number, street name, unit if applicable)"))
+print(input("enter your city name :"))
+print(input("enter you province :"))
+print(input("enter your postal code :"))
+print(input("enter your special instructions for deliveries from this address :"))
+print(input("enter your phone number:"))
+print()
+#then we will show the user the menu available for the customers
+print("You pick!  What should Arnold sell?")
+print()
 
-# C extensions
-*.so
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+("select the number from the menu what do you want")
+print()
+print(" 1. pizza")
+print("2. pasta")
+#now it will ask the customer's choice for what they want to eat
+choice=int(input(("enter your choice (1 and 2 only): ")))
+confirmation1= ("str")
+confirmation2= ("str")
+# if the user choose the option 1 then it will ask for the quantity and tell price and in the end it will 
+#ask for the confirmation if everything input by the user was correct
+if choice==1:
+    print("thankyou for choosing pizza")
+    quantity1= int(input("how much quantity do you need : "))
+    price1=print("the price for pizza is 10 dollars")
+    def totalprice1(int):
+       totalprice1==price1
+       return totalprice1
+    price1=10 
+    student1 = str(input("Are you a Student? Y OR N:")) 
+    confirmation1= str(input("confirm your order with Y or N: "))
+    
+# if the user choose the option 2 then it will ask for the quantity and tell price of  2nd option 
+# and in the end it will ask for the confirmation if everything input by the user was correct     
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+elif choice==2:
+    print("thankyou for choosing pasta")
+    quantity2= int(input("how much quantity do you need : "))
+    def totalprice2(int):
+        totalprice2==price2
+        return totalprice2
+    price2=print("the price for pasta is 20 dollars")
+    price2=20
+    student2 = str(input("Are you a Student? Y OR N:"))
+    confirmation2= str(input("confirm your order with Y or N: "))
+#if the customer enter the choice other than given numbers, it  will ask user to enter a valid value
+else:
+    print("please enter a valid number")
+#after  getting every information the customer ,it will start for counting 
+# the discount available to the customer 
+while True:
+    if confirmation1=="Y" or confirmation1=="y":
+        totalprice1=price1*quantity1
+        print("your  total cost is", price1*quantity1, "dollars")
+        print("thankyou for your order")
+        if totalprice1<=100:
+            print("you have 5% , discount on  your order -",totalprice1*0.05)
+ #if the customer is a student it will offer student discount as well           
+            if student1 == "Y"  or student1=="y":
+                    print("you are aslo eligible for student discount of 10%")
+                    print("the  price for pizza  without 13% HST is : ",totalprice1*0.85)
+            else:
+                    print("Your final Price for Pizza is without 13% HST: ",totalprice1*0.95)
+            print()
+ #the receipt will be look like  this
+            print ("Reciept")
+            print("Order                Quantity    Price   Total")
+            print("-----                --------    -----   -----")
+            print("pizza               ",quantity1,"         $10      $",totalprice1)
+            if student1 == "Y" or  student1=="y":
+                    print("10% Student discount                      -$",totalprice1*0.10)
+                    print("Discount of 5%                           -$",totalprice1*0.05)
+                    print("                           Sub Total      $",totalprice1*0.85)
+                    print("                           Tax (13%)      $",totalprice1*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice1*0.98)
+            else:
+                    print("Discount of 5%                           -$",totalprice1*0.05)
+                    print("                           Sub Total      $",totalprice1*0.95)
+                    print("                           Tax (13%)      $",totalprice1*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice1*1.08)
+#when the total amount lies between these values it automatically offers more discounts to customers
+        elif totalprice1 > 100 and totalprice1 < 500:
+                print("Total $",totalprice1)
+                print("you are eligible for  10%, discount -",totalprice1*0.10)
+                if student1 == "Y"  or student1=="y":
+                    print("you are aslo eligible for student discount of 10%")
+                    print("Your final Price for Pizza is without 13% HST: ",totalprice1*0.80)
+                else:
+                    print("Your final Price for Pizza is without 13% HST: ",totalprice1*0.90)
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+                print()
+                print ("Reciept")
+                print("Order                Quantity    Price   Total")
+                print("-----                --------    -----   -----")
+                print("pizza               ",quantity1,"         $10      $",totalprice1)
+                if student1=="Y"  or student1=="y":
+                    print("10% Student discount                    -$",totalprice1*0.10)
+                    print("Discount of 10%                           -$",totalprice1*0.10)
+                    print("                           Sub Total      $",totalprice1*0.80)
+                    print("                           Tax (13%)      $",totalprice1*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice1*0.93)
+                else:
+                    print("Discount of 10%                           -$",totalprice1*0.10)
+                    print("                           Sub Total      $",totalprice1*0.90)
+                    print("                           Tax (13%)      $",totalprice1*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice1*1.03)
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+        elif totalprice1 >= 500:
+                print("Total $",totalprice1)
+                print("Discount on order will be 15% -",totalprice1*0.15) 
+                if student1== "Y"  or student1=="y":
+                    print("you are aslo eligible for student discount of 10%")
+                    print("Your final Price for Pizza is without 13% HST: ",totalprice1*0.80)
+                else:
+                    print("Your final Price for Pizza is without 13% HST: ",totalprice1*0.90)
 
-# Translations
-*.mo
-*.pot
+                print()
+                print ("Reciept")
+                print("Order                Quantity    Price   Total")
+                print("-----                --------    -----   -----")
+                print("pizza               ",quantity1,"         $10      $",totalprice1)
+                if student1== "Y" or student1=="y":
+                    print("10% Student discount                    -$",totalprice1*0.10)
+                    print("Discount of 15%                           -$",totalprice1*0.15)
+                    print("                           Sub Total      $",totalprice1*0.75)
+                    print("                           Tax (13%)      $",totalprice1*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice1*0.88)
+                else:
+                    print("Discount of 15%                           -$",totalprice1*0.15)
+                    print("                           Sub Total      $",totalprice1*0.85)
+                    print("                           Tax (13%)      $",totalprice1*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice1*0.98)
+        break
+                    
+   
+    if confirmation2=="Y"  or confirmation2=="y":
+        totalprice2=price2*quantity2
+        print("your  total cost is", price2*quantity2, "dollars")
+        print("thankyou for your order")
+        if totalprice2<=100:
+            print("you have 5% , discount on  your order -",totalprice2*0.05)
+            if student2== "Y" or  student2=="y":
+#if the customer is a student it will offer student discount as well                 
+                    print("you are aslo eligible for student discount of 10%")
+                    print("the  price for pasta  without 13% HST is : ",totalprice2*0.85)
+            else:
+                    print("Your final Price for pasta is without 13% HST: ",totalprice2*0.95)
+            print()
+  #the receipt will be look like  this
+            print ("Reciept")
+            print("Order                Quantity    Price   Total")
+            print("-----                --------    -----   -----")
+            print("pasta               ",quantity2,"         $20      $",totalprice2)
+            if student2 == "Y"  or student2=="y":
+                    print("10% Student discount                      -$",totalprice2*0.10)
+                    print("Discount of 5%                           -$",totalprice2*0.05)
+                    print("                           Sub Total      $",totalprice2*0.85)
+                    print("                           Tax (13%)      $",totalprice2*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice2*0.98)
+            else:
+                    print("Discount of 5%                           -$",totalprice2*0.05)
+                    print("                           Sub Total      $",totalprice2*0.95)
+                    print("                           Tax (13%)      $",totalprice2*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice2*1.08)
+#when the total amount lies between these values it automatically offers more discounts to customers
+        elif totalprice2 > 100 and totalprice2 < 500:
+                print("Total $",totalprice2)
+                print("you are eligible for  10%, discount -",totalprice2*0.10)
+                if student2== "Y"  or student2=="y":
+                    print("you are aslo eligible for student discount of 10%")
+                    print("Your final Price for pasta is without 13% HST: ",totalprice2*0.80)
+                else:
+                    print("Your final Price for pasta is without 13% HST: ",totalprice2*0.90)
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+                print()
+                print ("Reciept")
+                print("Order                Quantity    Price   Total")
+                print("-----                --------    -----   -----")
+                print("pasta               ",quantity2,"         $20      $",totalprice2)
+                if student2== "Y"  or student2=="y":
+                    print("10% Student discount                    -$",totalprice2*0.10)
+                    print("Discount of 10%                           -$",totalprice2*0.10)
+                    print("                           Sub Total      $",totalprice2*0.80)
+                    print("                           Tax (13%)      $",totalprice2*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice2*0.93)
+                else:
+                    print("Discount of 10%                           -$",totalprice2*0.10)
+                    print("                           Sub Total      $",totalprice2*0.90)
+                    print("                           Tax (13%)      $",totalprice2*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice2*1.03)
 
-# Flask stuff:
-instance/
-.webassets-cache
+        elif totalprice2 >= 500:
+                print("Total $",totalprice2)
+                print("Discount on order will be 15% -",totalprice2*0.15) 
+                if student2== "Y"  or student2=="y":
+                    print("you are aslo eligible for student discount of 10%")
+                    print("Your final Price for pasta is without 13% HST: ",totalprice2*0.80)
+                else:
+                    print("Your final Price for pasta is without 13% HST: ",totalprice2*0.90)
 
-# Scrapy stuff:
-.scrapy
+                print()
+                print ("Reciept")
+                print("Order                Quantity    Price   Total")
+                print("-----                --------    -----   -----")
+                print("pasta               ",quantity2,"         $20      $",totalprice2)
+                if student2== "Y" or student2=="y":
+                    print("10% Student discount                    -$",totalprice2*0.10)
+                    print("Discount of 15%                           -$",totalprice2*0.15)
+                    print("                           Sub Total      $",totalprice2*0.75)
+                    print("                           Tax (13%)      $",totalprice2*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice2*0.88)
+                else:
+                    print("Discount of 15%                           -$",totalprice2*0.15)
+                    print("                           Sub Total      $",totalprice2*0.85)
+                    print("                           Tax (13%)      $",totalprice2*0.13)
+                    print("--------------------------------------------------")
+                    print("                           Grand Total    $",totalprice2*0.98)
+        break
+else:
+    print()
+    print ("Order Again") 
+    print()      
+     
 
-# Sphinx documentation
-docs/_build/
 
-# PyBuilder
-target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
 
-# IPython
-profile_default/
-ipython_config.py
+        
 
-# pyenv
-.python-version
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
 
-# SageMath parsed files
-*.sage.py
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
 
-# Rope project settings
-.ropeproject
 
-# mkdocs documentation
-/site
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
 
-# Pyre type checker
-.pyre/
+
